@@ -1,0 +1,39 @@
+# Spring Boot应用配置
+server:
+  port: 8081
+
+spring:
+  application:
+    name: sentinel-learning-project
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      # 暂时注释Nacos配置，避免连接错误
+      # datasource:
+      #   ds1:
+      #     nacos:
+      #       server-addr: localhost:8848
+      #       dataId: sentinel-learning-project
+      #       groupId: DEFAULT_GROUP
+      #       rule-type: flow
+
+# 日志配置
+logging:
+  level:
+    com.example.sentinel: DEBUG
+    com.alibaba.csp.sentinel: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Actuator配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+

@@ -1,0 +1,4 @@
+1. 配置好sentinelConfig，不然sentinelResource注解不生效
+2. 使用sentinelResource注解标注资源，value是取资源名，blockHandle是指定sentinel触发规则后的处理方法，当然还有业务异常处理方法
+3. 在sentinel 控制面板中可以为资源添加规则
+4. 学习sentinel控制面版下的所有规则的参数等等内容。
